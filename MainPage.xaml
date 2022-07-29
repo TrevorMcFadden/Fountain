@@ -1,0 +1,242 @@
+﻿<Page
+    x:Class="Fountain.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:Fountain"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <SplitView Name="SplitViewMenu" DisplayMode="CompactInline" CompactPaneLength="50" OpenPaneLength="250">
+            <SplitView.PaneBackground>
+                <AcrylicBrush TintColor="#CC9E9E9E" TintOpacity="0.6" Opacity="0.395" FallbackColor="#CC9E9E9E" BackgroundSource="HostBackdrop"/>
+            </SplitView.PaneBackground>
+            <SplitView.Pane>
+                <StackPanel>
+                    <StackPanel x:Name="MenuPanel" Orientation="Horizontal">
+                        <Button x:Name="MenuButton" Width="40" Height="40" Background="Transparent" BorderThickness="0,0,0,0" ToolTipService.ToolTip="Menu" TabIndex="0" Margin="5,5,5,5" CornerRadius="20,20,20,20">
+                            <SymbolIcon Symbol="GlobalNavigationButton"/>
+                        </Button>
+                        <TextBlock x:Name="MenuBlock" Text="Fountain" FontSize="20" VerticalAlignment="Center" FontWeight="Normal"/>
+                    </StackPanel>
+                    <StackPanel x:Name="SearchPanel" Orientation="Horizontal">
+                        <Button x:Name="SearchButton" Width="40" Height="40" Background="Transparent" BorderThickness="0,0,0,0" TabIndex="3" Margin="5,5,5,5" CornerRadius="20,20,20,20">
+                            <SymbolIcon Symbol="Find"/>
+                        </Button>
+                        <TextBox x:Name="SearchBox" Width="180" Height="40" Margin="5,5,5,5" BorderThickness="0,0,0,0" PlaceholderText="Search document" CornerRadius="20,20,20,20" Padding="20,9,20,9" TabIndex="4" SelectionHighlightColor="#FFFDBF00" ToolTipService.ToolTip="Search this document (searches whole words)"/>
+                    </StackPanel>
+                    <StackPanel x:Name="FontPanel" Orientation="Horizontal">
+                        <Button x:Name="FontButton" Width="40" Height="40" Background="Transparent" BorderThickness="0,0,0,0" TabIndex="5" Margin="5,5,5,5" CornerRadius="20,20,20,20">
+                            <SymbolIcon Symbol="Font"/>
+                        </Button>
+                        <ComboBox x:Name="FontBox" Width="100" Height="40" Margin="5,5,0,5" BorderThickness="0,0,0,0" PlaceholderText="Font" CornerRadius="20,0,0,20" TabIndex="6" IsEditable="True" ToolTipService.ToolTip="Change the font of the text">
+                            <ComboBoxItem Content="Arial" FontFamily="Arial"/>
+                            <ComboBoxItem Content="Bahnschrift" FontFamily="Bahnschrift"/>
+                            <ComboBoxItem Content="Calibri" FontFamily="Calibri"/>
+                            <ComboBoxItem Content="Cambria" FontFamily="Cambria"/>
+                            <ComboBoxItem Content="Candara" FontFamily="Candara"/>
+                            <ComboBoxItem Content="Courier New" FontFamily="Courier New"/>
+                            <ComboBoxItem Content="Gabriola" FontFamily="Gabriola"/>
+                            <ComboBoxItem Content="Georgia" FontFamily="Georgia"/>
+                            <ComboBoxItem Content="Impact" FontFamily="Impact"/>
+                            <ComboBoxItem Content="Lucida Console" FontFamily="Lucida Console"/>
+                            <ComboBoxItem Content="Segoe Script" FontFamily="Segoe Script"/>
+                            <ComboBoxItem Content="Segoe UI" FontFamily="Segoe UI"/>
+                            <ComboBoxItem Content="Tahoma" FontFamily="Tahoma"/>
+                            <ComboBoxItem Content="Times New Roman" FontFamily="Times New Roman"/>
+                            <ComboBoxItem Content="Verdana" FontFamily="Verdana"/>
+                        </ComboBox>
+                        <ComboBox x:Name="FontSizeBox" Width="81" Height="40" BorderThickness="0,0,0,0" PlaceholderText="Size" CornerRadius="0,20,20,0" TabIndex="7" Margin="0,5,5,5" IsEditable="True" ToolTipService.ToolTip="Change the size of the selected text">
+                            <ComboBoxItem Content="8"/>
+                            <ComboBoxItem Content="9"/>
+                            <ComboBoxItem Content="10"/>
+                            <ComboBoxItem Content="11"/>
+                            <ComboBoxItem Content="12"/>
+                            <ComboBoxItem Content="14"/>
+                            <ComboBoxItem Content="16"/>
+                            <ComboBoxItem Content="18"/>
+                            <ComboBoxItem Content="20"/>
+                            <ComboBoxItem Content="22"/>
+                            <ComboBoxItem Content="24"/>
+                            <ComboBoxItem Content="26"/>
+                            <ComboBoxItem Content="28"/>
+                            <ComboBoxItem Content="30"/>
+                            <ComboBoxItem Content="36"/>
+                            <ComboBoxItem Content="48"/>
+                            <ComboBoxItem Content="72"/>
+                            <ComboBoxItem Content="96"/>
+                        </ComboBox>
+                    </StackPanel>
+                    <StackPanel x:Name="FontSizePanel" Orientation="Horizontal"/>
+                    <StackPanel x:Name="ListStylePanel" Orientation="Horizontal">
+                        <Button x:Name="ListStyleButton" Width="40" Height="40" Background="Transparent" BorderThickness="0,0,0,0" TabIndex="8" Margin="5,5,5,5" CornerRadius="20,20,20,20">
+                            <SymbolIcon Symbol="Bullets"/>
+                        </Button>
+                        <ComboBox x:Name="ListStyleBox" Width="180" Height="40" Margin="5,5,5,5" BorderThickness="0,0,0,0" PlaceholderText="Select list style" CornerRadius="20,20,20,20" TabIndex="9" ToolTipService.ToolTip="Select a list style">
+                            <ComboBoxItem Content="Arabic"/>
+                            <ComboBoxItem Content="Arabic Abjad"/>
+                            <ComboBoxItem Content="Arabic Dictionary"/>
+                            <ComboBoxItem Content="Arabic Wide"/>
+                            <ComboBoxItem Content="Black Circle Wingding"/>
+                            <ComboBoxItem Content="Bullet"/>
+                            <ComboBoxItem Content="Circled Number"/>
+                            <ComboBoxItem Content="Devanagari Consonant"/>
+                            <ComboBoxItem Content="Devanagari Numeric"/>
+                            <ComboBoxItem Content="Devanagari Vowel"/>
+                            <ComboBoxItem Content="English (Lowercase)"/>
+                            <ComboBoxItem Content="English (Uppercase)"/>
+                            <ComboBoxItem Content="Hebrew"/>
+                            <ComboBoxItem Content="Japanese (Simplified Chinese)"/>
+                            <ComboBoxItem Content="Korean-Japanese"/>
+                            <ComboBoxItem Content="None"/>
+                            <ComboBoxItem Content="Roman (Lowercase)"/>
+                            <ComboBoxItem Content="Roman (Uppercase)"/>
+                            <ComboBoxItem Content="Simplified Chinese"/>
+                            <ComboBoxItem Content="Thai Alphabetic"/>
+                            <ComboBoxItem Content="Thai Numeric"/>
+                            <ComboBoxItem Content="Traditional Chinese"/>
+                            <ComboBoxItem Content="Unicode Sequence"/>
+                            <ComboBoxItem Content="White Circle Wingding"/>
+                        </ComboBox>
+                    </StackPanel>
+                    <StackPanel x:Name="UnderlineStylePanel" Orientation="Horizontal">
+                        <Button x:Name="UnderlineStyleButton" Width="40" Height="40" Background="Transparent" BorderThickness="0,0,0,0" TabIndex="10" Margin="5,5,5,5" CornerRadius="20,20,20,20">
+                            <SymbolIcon Symbol="Underline"/>
+                        </Button>
+                        <ComboBox x:Name="UnderlineBox" Width="180" Height="40" Margin="5,5,5,5" BorderThickness="0,0,0,0" PlaceholderText="Select underline style" CornerRadius="20,20,20,20" TabIndex="11" ToolTipService.ToolTip="Select an underline style">
+                            <ComboBoxItem Content="Dash"/>
+                            <ComboBoxItem Content="Dash-dot"/>
+                            <ComboBoxItem Content="Dash-dot-dot"/>
+                            <ComboBoxItem Content="Long dash"/>
+                            <ComboBoxItem Content="Thick dash"/>
+                            <ComboBoxItem Content="Thick long-dash"/>
+                            <ComboBoxItem Content="Dotted"/>
+                            <ComboBoxItem Content="Thick dotted"/>
+                            <ComboBoxItem Content="Double"/>
+                            <ComboBoxItem Content="Thick dash-dot"/>
+                            <ComboBoxItem Content="Thick dash-dot-dot"/>
+                            <ComboBoxItem Content="Thick"/>
+                            <ComboBoxItem Content="Single"/>
+                            <ComboBoxItem Content="Thin"/>
+                            <ComboBoxItem Content="Wave"/>
+                            <ComboBoxItem Content="Double wave"/>
+                            <ComboBoxItem Content="Heavy wave"/>
+                            <ComboBoxItem Content="Underline words"/>
+                            <ComboBoxItem Content="None"/>
+                        </ComboBox>
+                    </StackPanel>
+                    <StackPanel x:Name="SpaceBetweenPanel" Orientation="Horizontal">
+                        <Button x:Name="SpaceBetweenButton" Width="40" Height="40" Background="Transparent" BorderThickness="0,0,0,0" TabIndex="12" Margin="5,5,5,5" CornerRadius="20,20,20,20">
+                            <SymbolIcon Symbol="FullScreen"/>
+                        </Button>
+                        <ComboBox x:Name="SpaceBetweenBox" Width="180" Height="40" Margin="5,5,5,5" BorderThickness="0,0,0,0" PlaceholderText="Select line space" CornerRadius="20,20,20,20" TabIndex="13" ToolTipService.ToolTip="Select how much space there is between lines">
+                            <ComboBoxItem Content="Single"/>
+                            <ComboBoxItem Content="1.5"/>
+                            <ComboBoxItem Content="Double"/>
+                        </ComboBox>
+                    </StackPanel>
+                    <StackPanel x:Name="SettingsPanel" Orientation="Horizontal">
+                        <Button x:Name="SettingsButton" Width="40" Height="40" Background="Transparent" BorderThickness="0,0,0,0" ToolTipService.ToolTip="Settings" TabIndex="16" Margin="5,5,5,5" CornerRadius="20,20,20,20">
+                            <SymbolIcon Symbol="Setting"/>
+                        </Button>
+                        <TextBlock x:Name="SettingsBlock" Text="Settings" FontSize="16" VerticalAlignment="Center"/>
+                    </StackPanel>
+                    <StackPanel x:Name="SpellCheckPanel" Orientation="Horizontal">
+                        <ToggleSwitch x:Name="SpellCheckSwitch" Header="Spell-check" Width="138" Margin="50,0,20,0" OffContent="Off" OnContent="On" Visibility="Visible" TabIndex="17" ToolTipService.ToolTip="Toggle spell-check" IsEnabled="False" />
+                    </StackPanel>
+                </StackPanel>
+            </SplitView.Pane>
+            <SplitView.Content>
+                <Grid x:Name="FountainBackgroundGrid">
+                    <TextBlock x:Name="DocumentTitleBlock" Margin="20,16,20,0" TextWrapping="NoWrap" Text="Document Title" VerticalAlignment="Top" TextTrimming="CharacterEllipsis" ToolTipService.ToolTip="{Binding Text, ElementName=DocumentTitleBlock}"/>
+                    <RichEditBox x:Name="WritingBox" Margin="0,50,0,40" AllowDrop="True" BorderThickness="0,0,0,0" FontFamily="Segoe UI" Padding="20,10,20,10" IsHandwritingViewEnabled="True" FontSize="16" PlaceholderText="What would you like to write today?" TabIndex="54" SelectionHighlightColor="#FFFDBF00">
+                        <RichEditBox.HandwritingView>
+                            <HandwritingView/>
+                        </RichEditBox.HandwritingView>
+                    </RichEditBox>
+                    <CommandBar x:Name="FountainBar" DefaultLabelPosition="Right" CornerRadius="20,20,20,20" VerticalAlignment="Bottom">
+                        <CommandBar.Content>
+                            <Grid/>
+                        </CommandBar.Content>
+                        <AppBarButton x:Name="UndoButton" Visibility="Visible" ToolTipService.ToolTip="Undo (Ctrl+Z)" Label="Undo" Icon="Undo" TabIndex="18" IsEnabled="False"/>
+                        <AppBarButton x:Name="RedoButton" Visibility="Visible" ToolTipService.ToolTip="Redo (Ctrl+Y)" Label="Redo" Icon="Redo" TabIndex="19" IsEnabled="False"/>
+                        <AppBarButton x:Name="OpenButton" Visibility="Visible" ToolTipService.ToolTip="Open an existing document" Label="Open" Icon="Folder" TabIndex="20"/>
+                        <AppBarButton x:Name="SaveButton" Visibility="Visible" ToolTipService.ToolTip="Save the current document" Label="Save" Icon="Save" TabIndex="21"/>
+                        <AppBarSeparator/>
+                        <AppBarButton x:Name="CutButton" Visibility="Visible" ToolTipService.ToolTip="Cut the selected text from the document" Background="{x:Null}" Icon="Cut" Label="Cut" TabIndex="23"/>
+                        <AppBarButton x:Name="CopyButton" Visibility="Visible" ToolTipService.ToolTip="Copy the selected text from the document" Background="{x:Null}" Icon="Copy" Label="Copy" TabIndex="24"/>
+                        <AppBarButton x:Name="PasteButton" Visibility="Visible" ToolTipService.ToolTip="Paste your selection into the document" Background="{x:Null}" Label="Paste" Icon="Paste" TabIndex="25"/>
+                        <AppBarSeparator/>
+                        <AppBarButton x:Name="BoldButton" Icon="Bold" Label="Bold" ToolTipService.ToolTip="Bold the selected text" TabIndex="26"/>
+                        <AppBarButton x:Name="ItalicizeButton" Icon="Italic" Label="Italicize" ToolTipService.ToolTip="Italicize the selected text" TabIndex="28"/>
+                        <AppBarButton x:Name="StrikethroughButton" Label="Strikethrough" ToolTipService.ToolTip="Strikethrough the selected text" TabIndex="29">
+                            <AppBarButton.Icon>
+                                <FontIcon Glyph="&#xEDE0;"/>
+                            </AppBarButton.Icon>
+                        </AppBarButton>
+                        <AppBarButton x:Name="UnderlineButton" Icon="Underline" Label="Underline" ToolTipService.ToolTip="Underline the selected text" TabIndex="30"/>
+                        <AppBarSeparator/>
+                        <AppBarButton x:Name="AlignLeftButton" Visibility="Visible" ToolTipService.ToolTip="Align the selected text to the left" Background="{x:Null}" Icon="AlignLeft" Label="Left" TabIndex="32"/>
+                        <AppBarButton x:Name="AlignCenterButton" Visibility="Visible" ToolTipService.ToolTip="Align the selected text to the center" Background="{x:Null}" Label="Center" Icon="AlignCenter" TabIndex="33"/>
+                        <AppBarButton x:Name="AlignRightButton" Visibility="Visible" ToolTipService.ToolTip="Align the selected text to the right" Background="{x:Null}" Icon="AlignRight" Label="Right" TabIndex="34"/>
+                        <AppBarSeparator/>
+                        <AppBarButton x:Name="BulletButton" Label="Bullet" Icon="Bullets" ToolTipService.ToolTip="Bullet the text" TabIndex="35"/>
+                        <AppBarButton x:Name="ColorButton" Label="Color" ToolTipService.ToolTip="Open the text and page color options" TabIndex="36">
+                            <AppBarButton.Icon>
+                                <FontIcon Glyph="&#xE790;"/>
+                            </AppBarButton.Icon>
+                        </AppBarButton>
+                        <AppBarButton x:Name="CapitalizationButton" Label="Capitalization" Icon="FontSize" ToolTipService.ToolTip="Select capitalization options for the text" TabIndex="37">
+                            <AppBarButton.Flyout>
+                                <MenuFlyout x:Name="CapitalizationFlyout">
+                                    <MenuFlyoutItem x:Name="AllCapsItem" ToolTipService.ToolTip="Make the selected text all caps" Text="All caps"/>
+                                    <MenuFlyoutItem x:Name="LowercaseItem" ToolTipService.ToolTip="Make the selected text lowercase" Text="Lowercase"/>
+                                    <MenuFlyoutItem x:Name="SmallCapsItem" ToolTipService.ToolTip="Create smaller caps with the selected text" Text="Smaller caps"/>
+                                    <MenuFlyoutItem x:Name="SubscriptItem" ToolTipService.ToolTip="Subscript the selected text" Text="Subscript"/>
+                                    <MenuFlyoutItem x:Name="SuperscriptItem" ToolTipService.ToolTip="Superscript the selected text" Text="Superscript"/>
+                                    <MenuFlyoutItem x:Name="UppercaseItem" ToolTipService.ToolTip="Make the selected text uppercase" Text="Uppercase"/>
+                                </MenuFlyout>
+                            </AppBarButton.Flyout>
+                        </AppBarButton>
+                        <AppBarSeparator/>
+                        <AppBarButton x:Name="AddImageButton" Visibility="Visible" ToolTipService.ToolTip="Add an image to this document" Label="Add image" Icon="Camera" TabIndex="38"/>
+                        <AppBarButton x:Name="DefineButton" Visibility="Visible" ToolTipService.ToolTip="Define the selected text on Merriam-Webster" Label="Define" Icon="Find" TabIndex="39"/>
+                        <AppBarButton x:Name="SearchBingButton" Visibility="Visible" ToolTipService.ToolTip="Search for the selected text on Bing" Label="Search Bing" Icon="Globe" TabIndex="40"/>
+                        <AppBarSeparator/>
+                        <AppBarButton x:Name="AddToCalendarButton" Icon="Calendar" Label="Add to calendar" TabIndex="41" ToolTipService.ToolTip="Add the selected text to your calendar"/>
+                        <AppBarButton x:Name="EmailButton" Visibility="Visible" ToolTipService.ToolTip="Email this document"  Label="Email" Icon="Mail" TabIndex="42"/>
+                        <AppBarButton x:Name="ShareButton" Icon="Share" Label="Share" ToolTipService.ToolTip="Share the selected text with others" TabIndex="43"/>
+                        <AppBarButton x:Name="ClipboardHistoryButton" Label="Clipboard" ToolTipService.ToolTip="Open your clipboard history" TabIndex="44">
+                            <AppBarButton.Icon>
+                                <FontIcon Glyph="&#xF0E3;"/>
+                            </AppBarButton.Icon>
+                        </AppBarButton>
+                        <AppBarButton x:Name="EmojiButton" Icon="Emoji" Label="Emoji" ToolTipService.ToolTip="Open the emoji panel" TabIndex="45"/>
+                        <AppBarButton x:Name="HandwritingButton" Visibility="Visible" ToolTipService.ToolTip="Open the handwriting view" Label="Handwriting" TabIndex="46">
+                            <AppBarButton.Icon>
+                                <FontIcon Glyph="&#xF742;"/>
+                            </AppBarButton.Icon>
+                        </AppBarButton>
+                        <AppBarButton x:Name="KeyboardButton" Icon="Keyboard" Label="Keyboard" ToolTipService.ToolTip="Open touch keyboard" TabIndex="47"/>
+                    </CommandBar>
+                    <Rectangle x:Name="TextAndPageColorMenuBackground" StrokeThickness="0" Visibility="Collapsed" >
+                        <Rectangle.Fill>
+                            <AcrylicBrush TintColor="#0C000000" Opacity="0.95" AlwaysUseFallback="False" FallbackColor="White" TintOpacity="1"/>
+                        </Rectangle.Fill>
+                    </Rectangle>
+                    <ColorPicker x:Name="TextAndPageColorPicker" ColorSpectrumShape="Ring" CompositeMode="Inherit" CornerRadius="20,20,20,20" Visibility="Collapsed" TabIndex="50" Margin="20,40,20,40" ColorSpectrumComponents="HueSaturation" IsColorChannelTextInputVisible="False" IsAlphaEnabled="True" IsMoreButtonVisible="True"/>
+                    <CommandBar x:Name="ColorBar" VerticalAlignment="Bottom" DefaultLabelPosition="Right" Visibility="Collapsed">
+                        <CommandBar.Content>
+                            <Grid/>
+                        </CommandBar.Content>
+                        <AppBarButton x:Name="ApplyToTextButton" Icon="FontColor" Label="Apply to text" TabIndex="51" ToolTipService.ToolTip="Apply the color to the text"/>
+                        <AppBarButton x:Name="ApplyToPageButton" Icon="Page" Label="Apply to page" TabIndex="52" ToolTipService.ToolTip="Apply the color to the document page"/>
+                        <AppBarButton x:Name="CloseColorMenuButton" Icon="Cancel" Label="Close color menu" TabIndex="53" ToolTipService.ToolTip="Close this menu"/>
+                    </CommandBar>
+                </Grid>
+            </SplitView.Content>
+        </SplitView>
+    </Grid>
+</Page>
