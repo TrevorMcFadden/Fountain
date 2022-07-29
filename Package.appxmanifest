@@ -57,5 +57,6 @@
   <Capabilities>
     <Capability Name="internetClient" />
     <uap:Capability Name="appointments"/>
+    <uap:Capability Name="picturesLibrary"/>
   </Capabilities>
 </Package>
