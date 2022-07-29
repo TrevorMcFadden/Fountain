@@ -25,7 +25,7 @@
                         <Button x:Name="SearchButton" Width="40" Height="40" Background="Transparent" BorderThickness="0,0,0,0" TabIndex="3" Margin="5,5,5,5" CornerRadius="20,20,20,20">
                             <SymbolIcon Symbol="Find"/>
                         </Button>
-                        <TextBox x:Name="SearchBox" Width="180" Height="40" Margin="5,5,5,5" BorderThickness="0,0,0,0" PlaceholderText="Search document" CornerRadius="20,20,20,20" Padding="20,9,20,9" TabIndex="4" SelectionHighlightColor="#FFFDBF00" ToolTipService.ToolTip="Search this document (searches whole words)"/>
+                        <TextBox x:Name="SearchBox" Width="180" Height="40" Margin="5,5,5,5" BorderThickness="0,0,0,0" PlaceholderText="Search document" CornerRadius="20,20,20,20" Padding="20,9,20,9" TabIndex="4" ToolTipService.ToolTip="Search this document (searches whole words)"/>
                     </StackPanel>
                     <StackPanel x:Name="FontPanel" Orientation="Horizontal">
                         <Button x:Name="FontButton" Width="40" Height="40" Background="Transparent" BorderThickness="0,0,0,0" TabIndex="5" Margin="5,5,5,5" CornerRadius="20,20,20,20">
@@ -151,7 +151,7 @@
             <SplitView.Content>
                 <Grid x:Name="FountainBackgroundGrid">
                     <TextBlock x:Name="DocumentTitleBlock" Margin="20,16,20,0" TextWrapping="NoWrap" Text="Document Title" VerticalAlignment="Top" TextTrimming="CharacterEllipsis" ToolTipService.ToolTip="{Binding Text, ElementName=DocumentTitleBlock}"/>
-                    <RichEditBox x:Name="WritingBox" Margin="0,50,0,40" AllowDrop="True" BorderThickness="0,0,0,0" FontFamily="Segoe UI" Padding="20,10,20,10" IsHandwritingViewEnabled="True" FontSize="16" PlaceholderText="What would you like to write today?" TabIndex="54" SelectionHighlightColor="#FFFDBF00">
+                    <RichEditBox x:Name="WritingBox" Margin="0,50,0,40" AllowDrop="True" BorderThickness="0,0,0,0" FontFamily="Segoe UI" Padding="20,10,20,10" IsHandwritingViewEnabled="True" FontSize="16" PlaceholderText="What would you like to write today?" TabIndex="54">
                         <RichEditBox.HandwritingView>
                             <HandwritingView/>
                         </RichEditBox.HandwritingView>
